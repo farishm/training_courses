@@ -1,0 +1,59 @@
+<div [formGroup]="adressForm">
+  <div class="form-group row">
+    <label class="control-label col-2" for="#type">Type:</label>
+    <div class="col-10">
+      <select class="form-control" formControlName="type" placeholder="Select Address Type" required>
+        <option *ngFor="let type of addressTypes" [value]="type">{{type}}</option>
+      </select>
+      <div *ngIf="adressForm.controls.type.invalid" class="text-danger">
+        <small *ngIf="adressForm.controls.type.hasError('required')"> 
+          Address Type is required.
+        </small>
+      </div>
+    </div>
+  </div> 
+
+  <div class="form-group row">
+    <label class="control-label col-2" for="#line1">Line 1:</label>
+    <div class="col-10">
+      <input class="form-control" formControlName="line1" placeholder="Enter Line 1" required>  
+      <div *ngIf="adressForm.controls.line1.invalid" class="text-danger">
+        <small *ngIf="adressForm.controls.line1.hasError('required')"> 
+          Address Type is required.
+        </small>
+      </div>                                           
+    </div>
+  </div> 
+
+  <div class="form-group row">
+    <label class="control-label col-2" for="#city">City:</label>
+    <div class="col-10">
+      <input class="form-control" formControlName="city" placeholder="Enter Line City">                                             
+    </div>
+  </div> 
+
+  <div class="form-group row">
+    <label class="control-label col-2" for="#postcode">postcode:</label>
+    <div class="col-10">
+      <input class="form-control" formControlName="postcode" placeholder="Enter Post Code" required>                                             
+    </div>
+      <div *ngIf="adressForm.controls.postcode.invalid" class="text-danger">
+        <small *ngIf="adressForm.controls.postcode.hasError('required')"> 
+          Post code is required.
+        </small> 
+        <small *ngIf="adressForm.controls.postcode.hasError('pattern')">
+            Invalid Post code.
+        </small>
+      </div>
+  </div> 
+
+
+  <div class="form-group row">
+    <label class="control-label col-2" for="#county">County:</label>
+    <div class="col-10">
+      <select class="form-control" formControlName="county" placeholder="Enter County">
+        <option *ngFor="let county of counties" [value]="county">{{county}}</option>
+      </select>
+    </div>
+  </div>
+ </div>

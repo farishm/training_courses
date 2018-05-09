@@ -1,0 +1,31 @@
+<div [formGroup]="phoneForm">
+  <div class="form-group row">
+    <label class="control-label col-2" for="#type">Type:</label>
+    <div class="col-10">
+      <select class="form-control" formControlName="type" placeholder="Select Phone Type" required>
+        <option *ngFor="let type of phoneTypes" [value]="type">{{type}}</option>
+      </select>
+      <div *ngIf="phoneForm.controls.type.invalid" class="text-danger">
+        <small *ngIf="phoneForm.controls.type.hasError('required')"> 
+          Phone Type is required.
+        </small>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="form-group row">
+    <label class="control-label col-2" for="#number">Number:</label>
+    <div class="col-10">
+      <input class="form-control" name="number" formControlName="number" placeholder="Enter Line Number"  required>
+      <div *ngIf="phoneForm.controls.number.invalid" class="text-danger">
+        <small *ngIf="phoneForm.controls.number.hasError('required')"> 
+          Phone Number is required.
+        </small> 
+        <small *ngIf="phoneForm.controls.number.hasError('pattern')">
+            Invalid Phone Number.
+        </small>
+      </div>                                                                                                                
+    </div>
+  </div>   
+</div>
+

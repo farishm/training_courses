@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-10  text-left">
+                        <h3>Student List</h3>
+                    </div>  
+                    <div class="col-2 text-right">
+                        <button type="button" class="btn btn-outline-primary" (click)="gotoAdd()">Create New</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr class="table-info">           
+                        <th>Title</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>           
+                        <th>Level</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>                                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let student of students">
+                        <td  (click)="onSelect(student)">{{student.title}}</td>
+                        <td>{{student.firstName}}</td>
+                        <td>{{student.lastName}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.level}}</td>
+                        <td><button class="btn btn-primary btn-sm" (click)="gotoEdit(student)" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button></td>
+                        <td><button class="btn btn-info btn-sm" (click)="gotoView(student)" data-toggle="tooltip" data-placement="top" title="Info"><i class="fa fa-info"></i></button></td>
+                        <td><button class="btn btn-danger btn-sm"  (click)="onDelete(student)" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></td>
+                    </tr>       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+         <div *ngIf="detailsSelected" class="card mb-3 bg-light">
+            <div class="card-header"> Student: {{selectedStudent.firstName | uppercase}} {{selectedStudent.lastName | uppercase}} details</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 text-left" *ngIf="selectedStudent.addresses[0]" >
+                        <b>Address:</b> {{selectedStudent.addresses[0].line1}}, {{selectedStudent.addresses[0].city}}, {{selectedStudent.addresses[0].postcode}}, {{selectedStudent.addresses[0].county}}
+                        <br><br>                            
+                    </div>
+                        <div class="col-12 text-left" *ngIf="selectedStudent.phones[0]" >                                
+                        <b>Phone:</b> {{selectedStudent.phones[0].number}}
+                        <br><br>
+                    </div>
+                    <div class="col-12 text-right">
+                        <button (click)="gotoDetail()" class="btn btn-outline-info">
+                                        View more details
+                        </button>
+                        <button class="btn btn-outline-dark" (click)="gotoClose()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="deleteSelected" class="card mb-3 bg-light">
+            <div class="card-header">
+                Plese confirm to delete selected Student: {{selectedStudent.firstName | uppercase}} &nbsp; {{selectedStudent.lastName | uppercase}}-  <button class="btn btn-danger" (click)="delete(); $event.stopPropagation()">Confirm</button> 
+                <button class="btn btn-outline-dark" (click)="gotoCloseDel()">Close</button>
+            </div>                   
+        </div>
+    </div>
+</div>

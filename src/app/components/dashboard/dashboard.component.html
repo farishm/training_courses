@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+            <h3>Welcome to Trainig Courses System. The courses below are the top courses on the list....</h3>
+    </div>
+    <div class="card-body">
+            <div class="row"> 
+            <div *ngFor="let course of courses"  class="col-sm-3"> 
+
+                    <div class="card">
+                        <div class="card-header">
+                        <a [routerLink]="['/detailCourse', course.id]" class="card-link">            
+                            {{course.title}}           
+                        </a>
+                    </div>
+                    <div class="card-body">                            
+                        <p class="card-text">{{course.description}}</p>
+                        <p class="card-text">Available Places: {{course.availableplaces}}</p>
+                    </div>
+                </div>                    
+            </div>  
+        </div>
+    </div>       
+</div>
+   
+   
+

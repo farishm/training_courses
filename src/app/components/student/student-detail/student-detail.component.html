@@ -1,0 +1,152 @@
+<div class="row" *ngIf="student">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Student Details</h3>
+                    </div> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">                     
+                    <div class="col-9">                        
+                        <div>
+                            <h4>Basic Details:</h4>                                                                         
+                            <div class="form-group row">
+                                <label class="control-label col-3">Title:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.title}}</label> 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3">First Name:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.firstName}}</label>                                                                                        
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3">Last Name:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.lastName}}</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3">Email:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.email}}</label>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div>
+                            <h4>Address Details:</h4>
+                            <div *ngFor="let address of student.addresses; let i=index" class="panel panel-default">
+                            <!-- The repeated address template -->
+                            <div class="panel-heading">
+                                <span>Address #{{i + 1}}</span>                                          
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="form-group row">
+                                <label class="control-label col-3">Type:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.addresses[i].type}}</label>
+                                </div>
+                                </div> 
+
+                                <div class="form-group row">
+                                <label class="control-label col-3">Line 1:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.addresses[i].line1}}</label>                                          
+                                </div>
+                                </div> 
+
+                                <div class="form-group row">
+                                <label class="control-label col-3">City:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.addresses[i].city}}</label>                                           
+                                </div>
+                                </div> 
+
+                                <div class="form-group row">
+                                <label class="control-label col-3">Post Code:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.addresses[i].postcode}}</label>                                           
+                                </div>
+                                </div> 
+
+                                
+                                <div class="form-group row">
+                                <label class="control-label col-3">County:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.addresses[i].county}}</label>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- End of the repeated address template -->
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4>Phone Details:</h4>
+                            <div *ngFor="let phone of student.phones; let i=index" class="panel panel-default">
+                            <!-- The repeated address template -->
+                            <div class="panel-heading">
+                                    <span>Phone #{{i + 1}}</span>                                                
+                                    </div>
+                            <div class="panel-body">
+
+                                <div class="form-group row">
+                                <label class="control-label col-3">Type:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.phones[i].type}}</label>
+                                </div>
+                                </div> 
+                                
+                                <div class="form-group row">
+                                <label class="control-label col-3">Number:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.phones[i].number}}</label>                                    
+                                </div>
+                                </div>                                        
+                                        
+                            </div>
+                            <!-- End of the repeated address template -->
+                            </div>
+
+                        </div>                                    
+
+                            <div>
+                            <h4>Other Details:</h4>                                      
+                                                                                                
+                            <div class="form-group row radio">
+                                <label class="control-label col-3"><b>Level:</b></label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.level}}</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3">Terms:</label>
+                                <div class="col-9">
+                                    <label class="control-label">{{student.agreedTerms}}</label>                                                                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col text-right">
+                                <button class="btn btn-outline-primary" type="button" (click)="edit()">
+                                   Edit this Student
+                                </button>
+                                <button (click)="goBack()" class="btn btn-outline-dark" type="button">Back</button>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="col-3">
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="row">
+    <div class="col">
+        <div class="card mb-3" *ngIf="course">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Edit Course</h3>
+                    </div> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">                        
+                        <form #courseForm="ngForm" (ngSubmit)="save()">                            
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#courseTitle">Course Title:</label>
+                                <div class="col-9"> 
+                                    <input id="title" name="title" class="form-control"
+                                    required minlength="5" [(ngModel)]="course.title" #title="ngModel" placeholder="Enter course title">                                    
+                                    <div *ngIf="title.invalid && (title.dirty || title.touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="title.errors.required">
+                                            Title is mandatory.
+                                        </div>
+                                        <div *ngIf="title.errors.minlength">
+                                            please enter a Title with at least 5 characters.
+                                        </div>                                       
+                                    </div>
+                                    <div *ngIf="courseExists" class="alert alert-danger">
+                                            Title already Exists.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#description">Description:</label>
+                                <div class="col-9">
+                                    <textarea id="description" name="description" [(ngModel)]="course.description" class="form-control" rows="5" placeholder="Enter course description"></textarea>                                            
+                                </div>
+                            </div>
+                                <div class="form-group row">
+                                <label class="control-label col-3" for="#reference">Reference:</label>
+                                <div class="col-9">
+                                     <input id="reference" name="reference" [(ngModel)]="course.reference" class="form-control" placeholder="Enter course reference" required minlength="6" #reference="ngModel">
+                                    <div *ngIf="reference.invalid && (reference.dirty || reference.touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="reference.errors.required">
+                                            Reference is mandatory.
+                                        </div>
+                                        <div *ngIf="reference.errors.minlength">
+                                            please enter a Reference with at least 6 characters.
+                                        </div>                                       
+                                    </div>
+                                    <div *ngIf="referenceExists" class="alert alert-danger">
+                                            Reference already Exists.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#duration">Duration - Weeks:</label>
+                                <div class="col-9">
+                                    <input id="duration" name="duration" [(ngModel)]="course.duration" class="form-control" placeholder="Enter course duration in Weeks">
+                                </div>
+                            </div>
+                                <div class="form-group row">
+                                <label class="control-label col-3" for="#fees">Fees - £:</label>
+                                <div class="col-9">
+                                    <input  id="fees" name="fees" [(ngModel)]="course.fees" class="form-control" placeholder="Enter course fees in GBP">
+                                </div>
+                            </div>  
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#status">Status:</label>
+                                <div class="col-9">
+                                     <select id="status" name="status" class="form-control"
+                                            required [(ngModel)]="course.status" #status="ngModel" placeholder="Select course status">
+                                    <option *ngFor="let st of courseStatuses" [value]="st">{{st}}</option>
+                                    </select>
+                                    <div *ngIf="status.errors && status.touched" class="alert alert-danger">
+                                        <div *ngIf="status.errors.required">Power is required.</div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#location">Location:</label>
+                                <div class="col-9">
+                                    <input  id="location" name="location" [(ngModel)]="course.location" class="form-control" placeholder="Enter course location">
+                                </div>
+                            </div>  
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#totalplaces">Total Places:</label>
+                                <div class="col-9">
+                                    <input id="totalplaces" name="totalplaces" [(ngModel)]="course.totalplaces" class="form-control" placeholder="Enter course total places">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#availableplaces">Available Places:</label>
+                                <div class="col-9">
+                                    <input id="availableplaces" name="availableplaces"  [(ngModel)]="course.availableplaces" class="form-control" placeholder="Enter course available places">
+                                </div>
+                            </div>                                   
+                            <div class="form-group row"> 
+                                <div class="col text-right">
+                                     <button class="btn btn-outline-primary" type="submit" [disabled]="courseForm.invalid">
+                                        Save
+                                    </button>
+                                    <button (click)="goBack()" class="btn btn-outline-dark" type="button">Back</button>
+                                </div>
+                            </div>
+                         </form> 
+                        <p>courseForm value: {{diagnostic}}</p>                            
+                    </div> 
+                    <div class="col-3">
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
