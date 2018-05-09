@@ -1,7 +1,7 @@
 <div id="search-component" style="position: absolute;"> 
   <input #searchBox class="form-control input-sm" placeholder="Search Courses" id="search-box" (keyup)="search(searchBox.value)"/>
   <div>
-    <div *ngFor="let course of courses | async">
+    <div *ngFor="let course of courses$ | async">
 
          <a routerLink="/detail/{{course.id}}">
       {{course.title}}
