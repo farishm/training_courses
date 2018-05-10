@@ -1,4 +1,5 @@
 export const courseStatuses = ['Created', 'Scheduled', 'Opened', 'Started', 'Closed', 'Archived'];
+export const venueStatuses = ['Free', 'Booked', 'Occupied', 'Not in use'];
 export const titles = ['Mr', 'Miss', 'Mrs', 'Master'];
 export const addressTypes = ['Main', 'Delivery', 'Office', 'Billing'];
 export const phoneTypes = ['Home', 'Mobile', 'Office'];

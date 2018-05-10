@@ -1,15 +1,15 @@
-export interface Venue {
+export class Venue {
   id: number;
   name: string;
   description: string;
   number: Number;
   reference: string;
   capacity: Number;
-  status: string;
-  phone:string;
+  status: string; 
   email:string;
-  line1: string;
-  city: string;
-  postcode:string;
+  phone:string;
+  address: string;
+  city: string;  
   county:string;
+  postcode:string;
 }

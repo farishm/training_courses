@@ -35,8 +35,7 @@
   <div class="form-group row">
     <label class="control-label col-2" for="#postcode">postcode:</label>
     <div class="col-10">
-      <input class="form-control" formControlName="postcode" placeholder="Enter Post Code" required>                                             
-    </div>
+      <input class="form-control" formControlName="postcode" placeholder="Enter Post Code" required>     
       <div *ngIf="adressForm.controls.postcode.invalid" class="text-danger">
         <small *ngIf="adressForm.controls.postcode.hasError('required')"> 
           Post code is required.
@@ -44,7 +43,8 @@
         <small *ngIf="adressForm.controls.postcode.hasError('pattern')">
             Invalid Post code.
         </small>
-      </div>
+      </div>                                        
+    </div>      
   </div> 
 
 

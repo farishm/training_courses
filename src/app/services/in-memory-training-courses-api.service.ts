@@ -15,11 +15,11 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
   let venues = [
-       {id: 1, name: 'Net Hall 1', description: 'Net Hall 1', number: 1, reference: 'V001', capacity: 30, status: 'Free', phone:'07819912199', email: 'first1@gmail.com', line1: '123 Main Street',  city: 'City1', postcode: 'W10 5HJ',  county: 'County 1'},
-       {id: 2, name: 'Net Hall 2', description: 'Net Hall 1', number: 2, reference: 'V002', capacity: 50, status: 'Free', phone:'07219912199', email: 'first2@gmail.com', line1: '123 Main Street',  city: 'City1', postcode: 'W10 5HJ',  county: 'County 1'},
-       {id: 3, name: 'Net Hall 3', description: 'Net Hall 1', number: 3, reference: 'V003', capacity: 60, status: 'Free', phone:'07869912199', email: 'first3@gmail.com', line1: '123 Main Street',  city: 'City1', postcode: 'W10 5HJ',  county: 'County 1'},
-       {id: 4, name: 'Net Hall 4', description: 'Net Hall 1', number: 4, reference: 'V004', capacity: 30, status: 'Free', phone:'07819912199', email: 'first4@gmail.com', line1: '123 Main Street',  city: 'City1', postcode: 'W10 5HJ',  county: 'County 1'},
-       {id: 5, name: 'Net Hall 5', description: 'Net Hall 1', number: 5, reference: 'V005', capacity: 30, status: 'Free', phone:'07819512199', email: 'first5@gmail.com', line1: '123 Main Street',  city: 'City1', postcode: 'W10 5HJ',  county: 'County 1'},
+       {id: 1, name: 'Net Hall 1', description: 'Net Hall 1', number: 1, reference: 'V001', capacity: 30, status: 'Free', phone:'07819912199', email: 'first1@gmail.com', address: '123 Main Street',  city: 'City1',  county: 'County 1', postcode: 'W10 5HJ'},
+       {id: 2, name: 'Net Hall 2', description: 'Net Hall 1', number: 2, reference: 'V002', capacity: 50, status: 'Free', phone:'07219912199', email: 'first2@gmail.com', address: '123 Main Street',  city: 'City1',  county: 'County 1', postcode: 'W10 5HJ'},
+       {id: 3, name: 'Net Hall 3', description: 'Net Hall 1', number: 3, reference: 'V003', capacity: 60, status: 'Free', phone:'07869912199', email: 'first3@gmail.com', address: '123 Main Street',  city: 'City1',  county: 'County 1', postcode: 'W10 5HJ'},
+       {id: 4, name: 'Net Hall 4', description: 'Net Hall 1', number: 4, reference: 'V004', capacity: 30, status: 'Free', phone:'07819912199', email: 'first4@gmail.com', address: '123 Main Street',  city: 'City1',  county: 'County 1', postcode: 'W10 5HJ'},
+       {id: 5, name: 'Net Hall 5', description: 'Net Hall 1', number: 5, reference: 'V005', capacity: 30, status: 'Free', phone:'07819512199', email: 'first5@gmail.com', address: '123 Main Street',  city: 'City1',  county: 'County 1', postcode: 'W10 5HJ'},
     ];
 
     let students = [
