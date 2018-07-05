@@ -1,0 +1,78 @@
+<h3>Users inline editing...</h3>
+<hr>
+
+<input type="button" value="Add" class="btn btn-default" (click)="addUser()" />
+<div style="overflow:auto">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Phone</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let user of users;let i=idx">
+                <ng-template [ngTemplateOutlet]="loadTemplate(user)" [ngTemplateOutletContext]="{ $implicit: user, idx: i }"></ng-template>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<div>{{statusMessage}}</div>
+
+
+<!--The Html Template for Read-Only Rows-->
+<ng-template #readOnlyTemplate let-user>
+    <td>{{user.id}}</td>
+    <td>{{user.title}}</td>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>
+        <input type="button" value="Edit" class="btn btn-default" (click)="editUser(user)" />
+    </td>
+    <td>
+        <input type="button" value="Delete" (click)="deleteUser(user.id)" class="btn btn-danger" />
+    </td>
+</ng-template>
+<!--Ends Here-->
+
+<!--The Html Template for Editable Rows-->
+<ng-template #editTemplate>
+    <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.id" readonly disabled/>
+    </td>
+     <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.title" />
+    </td>
+    <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.firstName" />
+    </td>
+    <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.lastName" />
+    </td>
+    <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.email" />
+    </td>
+    <td>
+        <input class="form-control mb-2" type="text" [(ngModel)]="selUser.phone" />
+    </td>   
+    <td>
+        <input type="button" value="Save" (click)="saveUser()" class="btn btn-success" />
+    </td>
+    <td>
+        <input type="button" value="Cancel" (click)="cancel()" class="btn btn-warning" />
+    </td>
+
+</ng-template>
+<!--Ends Here-->
+
+

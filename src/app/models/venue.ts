@@ -8,7 +8,7 @@ export class Venue {
   status: string; 
   email:string;
   phone:string;
-  address: string;
+  line1: string;
   city: string;  
   county:string;
   postcode:string;

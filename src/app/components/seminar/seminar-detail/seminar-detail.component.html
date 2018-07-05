@@ -1,0 +1,91 @@
+<div class="row" *ngIf="seminar">
+    <div class="col">
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Course Details</h3>
+                    </div> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">                     
+                    <div class="col-9">                        
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Id:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.id}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Course Title:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.title}}</label>                                           
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Description:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.description}}</label>                                            
+                            </div>
+                        </div>
+                            <div class="form-group row">
+                            <label class="control-label col-3 h6">Reference:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.reference}}</label>                                            
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Duration - Weeks:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.duration}}</label>                                            
+                            </div>
+                        </div>
+                            <div class="form-group row">
+                            <label class="control-label col-3 h6">Fees - £:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.fees}}</label>
+                            </div>
+                        </div>  
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Status:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.status}}</label>
+                            </div>
+                        </div>  
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Location:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.location}}</label>
+                            </div>
+                        </div>  
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Total Places:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.totalplaces}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-3 h6">Available Places:</label>
+                            <div class="col-9 text-left">
+                                <label class="control-label">{{seminar.availableplaces}}</label>
+                            </div>
+                        </div>  
+
+
+                        <div class="form-group row">
+                            <div class="col text-right">
+                                <button class="btn btn-outline-primary" (click)="edit()" type="button">
+                                   Edit this Course
+                                </button>
+                                <button (click)="goBack()" class="btn btn-outline-dark" type="button">Back</button>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="col-3">
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

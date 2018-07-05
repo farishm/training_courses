@@ -38,11 +38,11 @@ export class StudentEditComponent implements OnInit {
     console.log(id);
     this.studentService.getStudent(id)
      // .subscribe(st => console.log(st));
-        .subscribe(st => {this.student = st; this.restForm();});
+        .subscribe(st => {this.student = st; this.resetForm();});
       console.log(this.student);
   }
 
-  restForm() {
+  resetForm() {
     console.log(this.student);
 
     //this.studentForm.setValue({

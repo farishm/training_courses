@@ -1,0 +1,167 @@
+<div class="row">
+    <div class="col">
+        <div class="card mb-3" *ngIf="college">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>{{title}}</h3>
+                    </div> 
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">                        
+                        <form [formGroup]="collegeForm" (ngSubmit)="save()" novalidate>
+                          <div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#">Name:</label>
+                                <div class="col-9">
+                                    <input class="form-control" formControlName="name"  placeholder="Enter First Name" required>
+                                     <div *ngIf="collegeForm.controls['name'].invalid && (collegeForm.controls['name'].dirty || collegeForm.controls['name'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="collegeForm.controls['name'].errors.required">
+                                            Name is mandatory.
+                                        </div>
+                                        <div *ngIf="collegeForm.controls['name'].errors.minlength">
+                                            please enter a Name with at least 2 characters.
+                                        </div>                                       
+                                    </div>                                        
+                                </div>
+                            </div>
+                             <div class="form-group row">
+                                <label class="control-label col-3" for="description">Description:</label>
+                                <div class="col-9">
+                                    <textarea id="description" formControlName="description" class="form-control" rows="5" placeholder="Enter venue description"></textarea>                                            
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="number">Number:</label>
+                                <div class="col-9">
+                                    <input id="number" formControlName="number" class="form-control" placeholder="Enter venue number">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#reference">Referenne:</label>
+                                <div class="col-9">
+                                    <input formControlName="reference" class="form-control" placeholder="Enter Referenne" required>
+                                     <div *ngIf="collegeForm.controls['reference'].invalid && (collegeForm.controls['reference'].dirty || collegeForm.controls['reference'].touched)"
+                                        class="alert alert-danger">
+                                      <div *ngIf="collegeForm.controls.reference.errors.required">
+                                        Referenne is required.
+                                      </div>
+                                       <div *ngIf="collegeForm.controls.reference.errors.minlength">
+                                        Referenne must be at least 10 characters long.
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#email">Email:</label>
+                                <div class="col-9">
+                                    <input formControlName="email" class="form-control" placeholder="Enter Email" required>
+                                    <div *ngIf="collegeForm.controls['email'].invalid && (collegeForm.controls['email'].dirty || collegeForm.controls['email'].touched)"
+                                        class="alert alert-danger">
+                                      <div *ngIf="collegeForm.controls.email.errors.required">
+                                        Email is required.
+                                      </div>
+                                       <div *ngIf="collegeForm.controls.email.errors.pattern">
+                                        Invalid Email.
+                                      </div>
+                                    </div>
+                                </div>
+                            </div> 
+                             <div class="form-group row">
+                                <label class="control-label col-3" for="capacity">Capacity:</label>
+                                <div class="col-9">
+                                    <input id="capacity" formControlName="capacity" class="form-control" placeholder="Enter venue capacity">
+                                </div>
+                            </div>                             
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="status">Status:</label>
+                                <div class="col-9">                                    
+                                    <input id="status" formControlName="status" class="form-control" placeholder="Enter venue status">
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <label class="control-label col-3" for="#phone">Phone:</label>
+                                <div class="col-9">
+                                    <input formControlName="phone" class="form-control" placeholder="Enter Phone" required>
+                                    <div *ngIf="collegeForm.controls['phone'].invalid && (collegeForm.controls['phone'].dirty || collegeForm.controls['phone'].touched)"
+                                        class="alert alert-danger">
+                                      <div *ngIf="collegeForm.controls.phone.errors.required">
+                                        Phone is required.
+                                      </div>
+                                       <div *ngIf="collegeForm.controls.phone.errors.pattern">
+                                        Invalid Phone
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div formGroupName="address">
+                              <div class="form-group row">
+                                    <label class="control-label col-12" for="line1">Address:</label>                                    
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-3" for="line1">First Line:</label>
+                                    <div class="col-9">
+                                        <input id="line1" formControlName="line1" class="form-control" placeholder="Enter first line of address"  required>
+                                         <div *ngIf="collegeForm.controls['address'].controls['line1'].invalid && (collegeForm.controls['address'].controls['line1'].dirty || collegeForm.controls['address'].controls['line1'].touched)"
+                                        class="alert alert-danger">
+                                      <div *ngIf="collegeForm.controls['address'].controls.line1.errors.required">
+                                        First Line of Address is required.
+                                      </div>
+                                       <div *ngIf="collegeForm.controls['address'].controls.line1.errors.minlength">
+                                        First Line of Address be at least 2 characters long.
+                                      </div>
+                                    </div>
+                                    </div>
+                                </div> 
+                                <div class="form-group row">
+                                    <label class="control-label col-3" for="city">City:</label>
+                                    <div class="col-9">
+                                        <input id="city" formControlName="city" class="form-control" placeholder="Enter college city">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-3" for="county">County:</label>
+                                    <div class="col-9">
+                                        <input id="county" formControlName="county" class="form-control" placeholder="Enter college county">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="control-label col-3" for="postcode">Postcode:</label>
+                                    <div class="col-9">
+                                        <input id="postcode" formControlName="postcode" class="form-control" placeholder="Enter college postcode" required>
+                                        <div *ngIf="collegeForm.controls['address'].controls['postcode'].invalid && (collegeForm.controls['address'].controls['postcode'].dirty || collegeForm.controls['address'].controls['postcode'].touched)"
+                                        class="alert alert-danger">
+                                            <div *ngIf="collegeForm.controls['address'].controls['postcode'].errors.required">
+                                                Postcode is mandatory.
+                                            </div>
+                                            <div *ngIf="collegeForm.controls['address'].controls['postcode'].hasError('pattern')">
+                                                please enter a valid Postcode.
+                                            </div>                                       
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>   
+                          </div>
+                          <div class="form-group row">
+                            <div class="col text-right">
+                                <button class="btn btn-outline-primary" type="submit" [disabled]="collegeForm.invalid" [title] = "collegeForm.invalid ? 'Save button is disabled because Form is incomplete.' : 'Click to Save'">
+                                      Save
+                                  </button>
+                                  <button (click)="goBack()" class="btn btn-outline-dark" type="button">Back</button>
+                            </div> 
+                          </div>
+                        </form>
+
+                        <p>collegeForm value: {{ collegeForm.value | json}}</p>                        
+                    </div> 
+                    <div class="col-3">
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
