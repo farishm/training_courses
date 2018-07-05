@@ -1,7 +1,7 @@
 # Training Courses Sample Application - Angular 5 and bootstrap 4
 
-This project is developed in Angular 5 and and bootstrap 4 using form builders, form groups, form controls, form arrays
-and validations..
+This project is developed in Angular 5 and bootstrap 4 using form builders, form groups, form controls, form arrays
+rxjs, routing and validations.
 
 generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
