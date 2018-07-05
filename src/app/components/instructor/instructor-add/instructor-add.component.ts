@@ -26,7 +26,8 @@ export class InstructorAddComponent implements OnInit {
     this.createForm();
   }
   
-  ngOnInit(): void {   
+  ngOnInit(): void { 
+    this.instructor=new Instructor();  
   }  
 
  createForm() {
