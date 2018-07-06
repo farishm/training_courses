@@ -47,6 +47,7 @@ import { CollegeListComponent } from './components/college/college-list/college-
 import { CollegeEditComponent } from './components/college/college-edit/college-edit.component';
 import { CollegeDetailComponent } from './components/college/college-detail/college-detail.component';
 import { UsersComponent } from './components/user/users/users.component';
+import { SearchComponent } from './components/shared/search/search.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { UsersComponent } from './components/user/users/users.component';
     CollegeListComponent,
     CollegeEditComponent,
     CollegeDetailComponent,
-    UsersComponent
+    UsersComponent,
+    SearchComponent
   ],
   providers: [ CourseService, SeminarService, CollegeService, VenueService, HallService, InstructorService,StudentService, MessageService, UserService, MemberService ],
   bootstrap: [ AppComponent ]

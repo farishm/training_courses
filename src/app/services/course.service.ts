@@ -59,7 +59,7 @@ export class CourseService {
       // if not search term, return empty course array.
       return of([]);
     }
-    return this.http.get<Course[]>(`${this.coursesUrl}/?name=${term}`).pipe(
+    return this.http.get<Course[]>(`${this.coursesUrl}/?title=${term}`).pipe(
       tap(_ => this.log(`found courses matching "${term}"`)),
       catchError(this.handleError<Course[]>('searchCourses', []))
     );

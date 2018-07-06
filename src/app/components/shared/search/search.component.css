@@ -1,9 +1,10 @@
+/* HeroSearch private styles */
 .search-result li {
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
-  width:195px;
-  height: 16px;
+  width:305px;
+  height: 26px;
   padding: 5px;
   background-color: white;
   cursor: pointer;
@@ -26,9 +27,9 @@
 .search-result li a:active {
   color: white;
 }
+
 #search-box {
-  width: 200px;
-  height: 20px;
+  width: 300px;
 }
 
 

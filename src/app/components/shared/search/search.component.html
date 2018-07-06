@@ -1,0 +1,10 @@
+<div id="search-component">
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <ul class="search-result">
+    <li *ngFor="let course of courses$ | async" >
+      <a routerLink="/detailCourse/{{course.id}}">
+        {{course.title | slice:0:30}}
+      </a>
+    </li>
+  </ul>
+</div>
